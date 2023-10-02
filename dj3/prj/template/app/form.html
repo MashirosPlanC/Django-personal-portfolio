@@ -1,0 +1,25 @@
+{% extends "app/main.html" %}
+
+{% block title %}contact{% endblock %}
+
+{% block content %}
+
+    <h1>Submit Your Information</h1>
+
+    <form method="post">
+        {% csrf_token %}
+        {{ form.as_p }}
+
+        <input type="submit" value="Submit">
+    </form>
+
+    {% if submitted_data %}
+    <h2>Submitted Data:</h2>
+    <p>Name: {{ submitted_data.name }}</p>
+    <p>Age: {{ submitted_data.age }}</p>
+    <p>Email: {{ submitted_data.email }}</p>
+    {% endif %}
+
+{% endblock %}
+
+

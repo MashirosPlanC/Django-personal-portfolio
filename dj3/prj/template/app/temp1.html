@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>
+            this is app1 temp1
+        </title>
+    </head>
+    <body>
+        <h1>this is app1 temp1</h1>
+
+        {% if nm %}
+        <h1> this is {{nm}}</h1>
+        {% endif %}
+
+        <p>pa1 in app</p>
+        <p style = ' color: brown;'>display {{word|truncatewords:5}}</p>
+        <p style = ' color: rgb(26, 26, 26);'>display {{word|length}}</p>
+        <p style = ' color: brown;'>display {{word|upper}}</p>
+        <p style = ' color: brown;'>display {{word|default:'No Value'}}</p>
+        <p style = ' color: brown;'>display {{date|date:'Y-m-d'}}</p>
+        <p style = ' color: brown;'>display {{word|title}}</p>
+        <table>
+            <thead>
+                <tr>
+                    <th>Name</th>
+                    <th>price</th>
+                    <th>color</th>
+                </tr>
+            </thead>
+            <tbody>
+                {% for row in product %}
+                    <tr>
+                        <td>{{ row.name }}</td>
+                        <td>{{ row.price }}</td>
+                        <td>{{ row.color }}</td>
+                    </tr>
+                {% endfor %}
+            </tbody>
+        </table>
+        
+        
+    </body>
+</html>
